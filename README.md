@@ -72,5 +72,3 @@ A tabela pessoas é criada automaticamente via init.sql:
       estado VARCHAR(100),
       pais VARCHAR(100)
     );
-    
-    ```
