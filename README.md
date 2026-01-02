@@ -62,12 +62,13 @@ A chave é configurada via variável de ambiente `API_KEY`. O projeto já vem co
 ## 🗄️ Banco de dados
 A tabela pessoas é criada automaticamente via init.sql:
 
-    CREATE TABLE pessoas (
-      id UUID PRIMARY KEY,
-      created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
-      nome VARCHAR(100) NOT NULL,
-      idade INT NOT NULL,
-      cidade VARCHAR(100),
-      estado VARCHAR(100),
-      pais VARCHAR(100)
-    );
+      CREATE EXTENSION IF NOT EXISTS pgcrypto;
+      CREATE TABLE pessoas (
+         id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+         created_at timestamptz DEFAULT now(),
+         nome text NOT NULL,
+         idade int NOT NULL,
+         cidade text NOT NULL,
+         estado char(2) NOT NULL,
+         pais text NOT NULL
+      );
