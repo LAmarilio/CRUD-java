@@ -61,8 +61,7 @@ A chave é configurada via variável de ambiente `API_KEY`. O projeto já vem co
 
 ## 🗄️ Banco de dados
 A tabela pessoas é criada automaticamente via init.sql:
-    ```sql
-    
+
     CREATE TABLE pessoas (
       id UUID PRIMARY KEY,
       created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
