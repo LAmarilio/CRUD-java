@@ -27,9 +27,9 @@ Ele implementa um CRUD completo para a entidade `Pessoa`, com validação via **
 ## 🔑 Segurança
 Todas as requisições exigem o header:
 
-X-API-KEY: <sua_chave>
+   X-API-KEY: <sua_chave>
 
-A chave é configurada via variável de ambiente `API_KEY`.
+A chave é configurada via variável de ambiente `API_KEY`. O projeto já vem com uma chave API definida no arquivo docker-compose, para testes, copiar ou alterar antes de rodar o comando docker-compose up --build.
 
 ---
 
@@ -61,7 +61,7 @@ A chave é configurada via variável de ambiente `API_KEY`.
 
 ## 🗄️ Banco de dados
 A tabela pessoas é criada automaticamente via init.sql:
-    ```SQL
+    ```sql
     CREATE TABLE pessoas (
       id UUID PRIMARY KEY,
       created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
